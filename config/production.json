@@ -1,0 +1,6 @@
+{
+  "port" : 5000,
+  "mongoUri": "mongodb+srv://dron:Ybrjkfbx@cluster0-ct9j0.azure.mongodb.net/app?retryWrites=true&w=majority",
+  "jwtSecret": "Dron like JS",
+  "baseUrl": "http://localhost:5000"
+}
