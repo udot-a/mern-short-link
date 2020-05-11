@@ -9,7 +9,7 @@ and
 ### `npm run dev`
 to run application on development mode.
 Runs the app in the development mode.<br />
-Open [http://dron-short-links.ru/](http://localhost:3000) to view it in the browser.
+Open [http://dron-short-links.ru/](http://dron-short-links.ru/) to view it in the browser.
 
 For work with application you can create new user or use test user:
 login ```test``` password ```123456```
