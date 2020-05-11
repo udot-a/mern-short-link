@@ -1,13 +1,36 @@
-import React from "react";
+import React, {useContext} from "react";
 import {Link} from "react-router-dom";
+import css from "./LinkList.module.css"
+import {useHttp} from "../hooks/http.hook";
+import {AuthContext} from "../context/AuthContext";
+import {useMessage} from "../hooks/message.hook";
 
-export const LinksList = ({ links }) => {
+export const LinksList = ({ links, fetchLinks }) => {
+    const {request} = useHttp();
+    const {token} = useContext(AuthContext);
+    const message = useMessage();
+
     if (!links.length) {
         return (
             <p className={"center"}>
                 {"Ссылок пока нет!"}
             </p>
         )
+    }
+
+    const handleClick = (id) => async () => {
+        try {
+                await request(`/api/link/${id}`, "DELETE", null, {
+                    Authorization: `Bearer ${token}`
+                });
+
+                message("Ссылка удалена!");
+
+                await fetchLinks();
+
+        } catch (e) {
+
+        }
     }
 
     return (
@@ -18,6 +41,7 @@ export const LinksList = ({ links }) => {
                 <th>Оригинальная</th>
                 <th>Сокращенная</th>
                 <th>Открыть</th>
+                <th>Удалить</th>
             </tr>
             </thead>
 
@@ -35,6 +59,15 @@ export const LinksList = ({ links }) => {
 
                         <td>
                             <Link to={`/detail/${_id}`}>Открыть</Link>
+                        </td>
+
+                        <td>
+                            <i
+                                className={`large material-icons ${css.del}`}
+                                onClick={handleClick(_id)}
+                            >
+                                {"delete_forever"}
+                            </i>
                         </td>
                     </tr>
                 )

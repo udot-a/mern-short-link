@@ -31,7 +31,7 @@ export const LinksPage = (props) => {
 
     return (
         <>
-            { !loading && <LinksList links={links}/> }
+            { !loading && <LinksList links={links} fetchLinks={fetchLinks}/> }
         </>
     )
 }

@@ -1,0 +1,9 @@
+.del {
+    color: #0d47a1;
+    font-size: 3vh!important;
+}
+
+.del:hover {
+    cursor: pointer;
+    color: #00b0ff;
+}
