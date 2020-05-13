@@ -34,7 +34,7 @@ export const LinksList = ({ links, fetchLinks }) => {
     }
 
     return (
-        <table>
+        <table className={"responsive-table"}>
             <thead>
             <tr>
                 <th>№</th>
