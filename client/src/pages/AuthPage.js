@@ -3,6 +3,7 @@ import "../index.css"
 import {useHttp} from "../hooks/http.hook";
 import {useMessage} from "../hooks/message.hook";
 import {AuthContext} from "../context/AuthContext";
+import css from "./AuthPage.module.css";
 
 export const AuthPage = (props) => {
     const {login} = useContext(AuthContext);
@@ -47,7 +48,7 @@ export const AuthPage = (props) => {
 
     return (
         <div className={"row"}>
-            <div className={"col s6 offset-s3"}>
+            <div className={css.winWidth}>
                 <h2> Сократи ссылку</h2>
 
                 <div className="card blue darken-1">
