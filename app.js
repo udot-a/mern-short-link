@@ -36,6 +36,6 @@ async function start() {
     }
 }
 
-app.listen(PORT, ()=> console.log(`App has benn started on PORT ${PORT}...`));
+app.listen(process.env.PORT || PORT, ()=> console.log(`App has benn started on PORT ${PORT}...`));
 
 start();
